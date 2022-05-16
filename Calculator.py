@@ -2,15 +2,12 @@
 
 
 
-import math
-
-# behöver för att kuna använd api korrekt samt eulers numer (e)
-import sympy as sp  # för derivering.
-import time  # time.sleep
+import math          # behöver för att kuna använd pi korrekt samt eulers numer (e)
+import time  #time.sleep
 import os
 
-
 # clearconsol.
+
 # Global variables
 
 # Classes
@@ -21,29 +18,25 @@ class Name:
 
 # Functions
 def cs():
+    """
+    denna funktion gör så att det ser lite bättre ut och att allt inte ska komma på en gång, gjorde funktionen för att det skulle gå lite långsammare
+    Inputen är 'time.sleep' vilket gör så att programmet väntar lite innan nästa funktion körs igång och
+    'os.system' vilket gör så att consolen blir ren och det gör det lättare att se vad som händer.
+    """
     time.sleep(2)
     os.system('Clear')
-
-def visit_saveeverything():
-    with open("saveeverything.txt", "r", encoding="utf8") as sav:
-        for elev in sav.readlines():
-            print(elev)
-        input(" ")
-            
 
 def name():
     name = input("write your name and klick ENTER to start. ")
     user = Name(name)
     main(user)
 
-
-def main(user):
-    print(f"\n\nwelcome {user.name}\n")
-    visit = input("do you want to se what you have been calculating? (y/n) ")
-    if "y" in visit:
-        visit_saveeverything()
-    else:
-        pass
+def mainmain():
+    """
+    här är sidomenyn, jag har 2 som är ungefär lika dana eftersom jag inte vet hur man kan ta bort en sak ur en funktion efter den 
+    har använts en gång. gjorde 2 olika metoder som gör samma bara att hen här inte har 'welcome' och den har 'press '#' if you want to quit'.
+    den här funktionen tillåter dig enbart att välja hur du vill calkulera.
+    """
     while True:
         print("""how would you like to calculate?
             [1] Addition
@@ -52,57 +45,101 @@ def main(user):
             [4] Divitions
             [5] percantage
             [6] Square
-            [7] Derivaties
-            [8] e^x
-            [9] pi
+            [7] e^x
+            [8] pi
+            [#] press '#' if you want to quit.
             """)
         number = input("Chose a number: ")
         if "1" == number:
-            addition(user)
+            addition()
             cs()
         elif "2" == number:
-            subbtraktion(user)
+            subbtraktion()
             cs()
         elif "3" == number:
-            multiplikation(user)
+            multiplikation()
             cs()
         elif "4" == number:
-            divition(user)
+            divition()
             cs()
         elif "5" == number:
-            percentage(user)
+            percentage()
             cs()
         elif "6" == number:
-            square(user)
+            square()
             cs()
         elif "7" == number:
-            derivaties(user)
+            e()
             cs()
         elif "8" == number:
-            e(user)
+            pi()
             cs()
-        elif "9" == number:
-            pi(user)
+            break
+        elif "#" == number:
+            visit_saveeverything()
+        else:
+            print("sir/ma'ma, please insurt a number")
+
+
+def main(user):   
+    """
+    först menyn, tillåter dig att välja vad du vill calculera.
+    """
+    print(f"\n\nwelcome {user.name}\n")
+    while True:
+        print("""how would you like to calculate?
+            [1] Addition                                                    
+            [2] Subbtrakton
+            [3] Multiplikation
+            [4] Divitions
+            [5] percantage
+            [6] Square
+            [7] e^x
+            [8] pi
+            """)
+        number = input("Chose a number: ")
+        if "1" == number:
+            addition()
+            cs()
+        elif "2" == number:
+            subbtraktion()
+            cs()
+        elif "3" == number:
+            multiplikation()
+            cs()
+        elif "4" == number:
+            divition()
+            cs()
+        elif "5" == number:
+            percentage()
+            cs()
+        elif "6" == number:
+            square()
+            cs()
+        elif "7" == number:
+            e()
+            cs()
+        elif "8" == number:
+            pi()
             cs()
             break
         else:
             print("sir/ma'ma, please insurt a number")
 
-
-def addition(user):
+def addition():
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
         number_choice = int(input("insurt a number: "))
         number_yes = int(input("insurt a nother number: "))
         number_addition = number_choice + number_yes
         number_combine = (f"{number_choice} + {number_yes} = {number_addition}")
         print(number_combine)
-        sav.write(str(number_combine) + "\n")
+        sav.write(number_combine + "\n")    
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
 
-def subbtraktion(user):
+def subbtraktion():
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
         number_Choice = int(input("insurt a number: "))
         number_yes = int(input("insurt a nother number: "))
@@ -112,10 +149,10 @@ def subbtraktion(user):
         sav.write(number_combine + "\n")
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
 
-def multiplikation(user):
+def multiplikation():
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
         number_choice = int(input("insurt a number: "))
         number_yes = int(input("insurt a nother number: "))
@@ -125,14 +162,14 @@ def multiplikation(user):
         sav.write(number_combine + "\n")
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
-def divition(user):
+def divition():
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
-        number_choice = int(input("insurt a number: "))
-        number_yes = int(input("insurt a nother number: "))
+        number_choice = int(input("insert a number: "))
+        number_yes = int(input("insert a nother number: "))
         number_divition = number_choice / number_yes
-        number_divition1 = number_choice // number_yes
+        number_divition1 = number_choice // number_yes     #rundar av exempelvis om det blir 0,6 eller 0,9 så rundas det ned till 0.
         number_combine = (f"{number_choice} / {number_yes} = {number_divition}")
         number_combine1 = (f"Rounded down: {number_choice} / {number_yes} = {number_divition1}")
         print(number_combine)
@@ -141,39 +178,39 @@ def divition(user):
         sav.write(number_combine1 + "\n")
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
 
 
-def percentage(user):
+def percentage():
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
         print("how much is x percent of y")
         x = int(input("insurt x: "))
         y = int(input("insurt y: "))
         xy = x / y
         times=xy
-        percent = (f"{x} is {times}% out of {y}")
+        time = times * 100
+        percent = (f"{x} is {time}% out of {y}")
         print(percent)
         sav.write(percent + "\n")
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
 
-def square(user):
+def square():
+    """
+    math.sqrt göt bara att man kan ta roten ur ett tal som användaren får välje.
+    """
     number_square = int(input("insurt a number to Square root OBS x > 0: "))
     print(math.sqrt(number_square))
-    main(user)
+    mainmain()
 
+def e():
+    """
+    här har jag använt mig av math.e vilket ger ett par desimaler från konstanten e.
+    """
 
-def derivaties(user):
-    x = sp.Symbol('x')
-    y = 3 * x ** 2 + 1
-    print(sp.diff(y, x))
-    main(user)
-
-
-def e(user):
     with open("saveeverything.txt", "a", encoding="utf-8") as sav:
         print("write what you want in x (e^x): ")
         number_x = int(input(" "))
@@ -183,10 +220,13 @@ def e(user):
         sav.write(oliver + "\n")
         sav.close()
         cs()
-        main(user)
+        mainmain()
 
 
 def pi(user):
+    """
+    jag importa math eftersom jag ville använda math.pi vilket ger hela eller många desimaler av pi.
+    """
     print("""
     [1] pi^
     [2] ^pi
@@ -206,6 +246,7 @@ def pi(user):
             lukas = (f"pi^{a} = {py1}")
             print(f"pi^{a} = {py1}")
             sav.write(lukas + "\n")
+            mainmain(user)
 
         elif "2" in number_x:
             print("x^pi, write your x: ")
@@ -214,6 +255,7 @@ def pi(user):
             albion = (f"{b}^pi = {py2}")
             print(f"{b}^pi = {py2}")
             sav.write(albion + "\n")
+            mainmain(user)
         
         elif "3" in number_x:
             print("x/pi, write your x: ")
@@ -223,6 +265,7 @@ def pi(user):
             zion = (f"{c}/pi = {py3} ~ {py35}")
             print(f"{c}/pi = {py3} ~ {py35}")
             sav.write(zion + "\n")
+            mainmain(user)
 
         elif "4" in number_x:
             print("pi/x, write your x: ")
@@ -232,6 +275,7 @@ def pi(user):
             alexis = (f"pi/{d} = {py4} ~ {py45}")
             print(f"pi/{d} = {py4} ~ {py45}")
             sav.write(alexis + "\n")
+            mainmain(user)
 
         elif "5" in number_x:
             print("x*pi, write your x ")
@@ -240,6 +284,7 @@ def pi(user):
             victor = (f"{e}*pi = {py5}")
             print(f"{e}*pi = {py5}")
             sav.write(victor + "\n")
+            mainmain(user)
 
         elif "6" in number_x:
             print("x+pi, write your x ")
@@ -247,7 +292,8 @@ def pi(user):
             py6 = f + math.pi
             jakob = (f"{f} + pi = {py6}") 
             print(f"{f} + pi = {py6}")
-            sav,write(jakob + "\n")
+            sav.write(jakob + "\n")
+            mainmain(user)
 
         elif "7" in number_x:
             print("x-pi, write your x: ")
@@ -256,6 +302,7 @@ def pi(user):
             max = (f"{g} - pi = {py7}")
             print(f"{g} - pi = {py7}")
             sav.write(max + "\n")
+            mainmain(user)
 
         elif "8" in number_x:
             print("pi-x, write your x: ")
@@ -264,10 +311,30 @@ def pi(user):
             tim = (f"pi - {h} = {py8}")
             print(f"pi - {h} = {py8}")
             sav.write(tim + "\n")
+            mainmain(user)
         
         else:
-            main(user)
+            mainmain(user)
     sav.close()
+
+def visit_saveeverything():
+    """
+    Den här funktionen är enbart så man kan gå tillbaka för att kolla vilka uträkningar man har gjort tidigare.
+    Jag frågar först om användaren vill avsluta eller inte, om de vill kommer man hitt och sedan kan man välja om man vill avluta eller ej.
+    om man inte vill kommer man tillbaka till 'huvudsidan' """
+    with open("saveeverything.txt", "r", encoding="utf8") as sav:
+        x = input("do you want to se what you have been calculated? (y/n)")
+        if "y" in x:
+            for s in sav.readlines():
+                print(s)
+            input(" ")
+        
+        else:
+            y = input("whould you like to quit or continu? (q/c)")
+            if "c" in y:
+                mainmain()  #huvudsidan
+            else:
+                quit()
 # fil som sparar allt man har räknat ut. och som kan hämta tillbak datan.
 #
 # Main-caller
@@ -275,3 +342,5 @@ def pi(user):
 
 if __name__ == "__main__":
     name()
+    
+    
