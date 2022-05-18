@@ -4,7 +4,7 @@ Miniräknare
 
 ## Bäskrivning om mitt program
 
-Min readme fil är skriven i markdown. Mitt program är skrivet i python. syftet med programmet är att man ska kunna använda den som en vanlig miniräknare som sparar det
+syftet med programmet är att man ska kunna använda den som en vanlig miniräknare som sparar det
 du har räknat ut så du kan gå tillbaka och kolla utifall du skulle behöva en utträkning från innan men du orkar inte gå tillbaka.
 
 ## språket programmet är skrivet i samt vad som har importats
