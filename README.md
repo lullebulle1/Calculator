@@ -115,6 +115,13 @@ Tillagt eller ändrat:
 -Ändrar namnet på variablar.
 
 Tagit bort:
+
+-tog bort klassen jag hade innan.
+
+-tog bort funktionen för klassen.
+
+-tog bort "mainmain()"
+
 -jag tog bort ett stycke kod som jag inte behövde, det gjorde koden mer effektiv.
 
 ## Framtida ändrinagar
