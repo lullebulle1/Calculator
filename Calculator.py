@@ -171,7 +171,7 @@ def divition():
         number_divition = number_choice / number_yes
         number_divition1 = number_choice // number_yes     #rundar av exempelvis om det blir 0,6 eller 0,9 så rundas det ned till 0.
         number_combine = (f"{number_choice} / {number_yes} = {number_divition}")
-        number_combine1 = (f"Rounded down: {number_choice} / {number_yes} = {number_divition1}")
+        number_combine1 = (f"Rounded down: {number_choice} / {number_yes} = {(number_divition1):.2f}") #":.2f" genom att skriva detta så avrundar datorn talet till 2 decimaler.
         print(number_combine)
         print(number_combine1)
         sav.write(number_combine + "\n")
@@ -190,7 +190,7 @@ def percentage():
         xy = x / y
         times=xy
         time = times * 100
-        percent = (f"{x} is {time}% out of {y}")
+        percent = (f"{x} is {time:.3f}% out of {y}")
         print(percent)
         sav.write(percent + "\n")
         sav.close()
