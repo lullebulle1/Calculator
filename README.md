@@ -10,30 +10,43 @@ du har räknat ut så du kan gå tillbaka och kolla utifall du skulle behöva en
 ## språket programmet är skrivet i samt vad som har importats
 
 -python: hela koden är skriven i python.
--import math för att kunna använda funktionerna "math.pi" och "math.pi" ger ett mer exakt värde plus att jag behöver inte skriva ned alla decimaler. Math används även till roten ur.
+
+-import math för att kunna använda funktionerna "math.pi" och "math.pi" ger ett mer exakt värde plus att jag behöver inte skriva ned alla decimaler. Math används även till roten ur. (math.e) (math.pi) (math.sqrt)
+
 -import os: använder os mest för att att styla skrämen där allt som användaren ser.
+
 -import time: mest för style.
 
 ## krav för att köra mitt program
 
 Man behöver följane:
+
 -python 3.9+
 
 ## Installation
 
-För att kunna köra mitt program behöver du python 3.9+. Du kan installera det här: <https://www.python.org/downloads/>
+För att kunna köra mitt program behöver du python 3.9+. Du kan installera det här:
+
+<https://www.python.org/downloads/>
+
 Jag har inga bibleotek som gräver att man ladar ned något så det är bara att tuta och köra.
 
 ## Hur det fungerar
 
 Man trycker på play och så hänvisar displayen vad man ska göra och vilka kanppar man ska trycka på ett exempel:
-Image: file:///C:/Users/lukas.munozdahlback/Pictures/Screenshots/Sk%C3%A4rmbild%20(9).png
+Image:
+
+![image](https://user-images.githubusercontent.com/95761005/169045712-7d337ff9-c65e-4f2e-9dbe-bb97dffe1570.png)
+
 
 Här är en bild på en meny där det står vad man ska göra för att komma ditt man vill.
 
 ## Exempelkörning
 
-Image: file:///C:/Users/lukas.munozdahlback/Pictures/Screenshots/Sk%C3%A4rmbild%20(10).png
+Image: 
+
+![image](https://user-images.githubusercontent.com/95761005/169046047-96c38604-3e7e-4dfb-9da5-774db74399ad.png)
+
 
 Här är en bild på ungefär hur det kan se ut när man kör programmet.
 Man kan skriver in sina egna tal och sen räknar datorn ut matten nödvändig för att få ut rätta svaret.
@@ -92,10 +105,24 @@ tagit bort:
 
 -jag tog bort tomma rader som inte innerhöll kod.
 
+Version 1.4
+Tillagt eller ändrat:
+
+-Jag har lagt till komentarer.
+
+-Tagit bort onödig kod som jag inte behöver.
+
+-Ändrar namnet på variablar.
+
+Tagit bort:
+-jag tog bort ett stycke kod som jag inte behövde, det gjorde koden mer effektiv.
+
 ## Framtida ändrinagar
 
 I nuläget är det ej tillåtet att ädra koden oavsätt om det är för det bättre eller sämre. Jag kommer börja tillåta ändringar och förbättringar när hela projektet är avklarat och jag har blivit bedömd på den.
 Om man så skulle vilja ändra sedan när det är tillåtet skulle man behöva kontakta mig via någon av länkarna nedanför och fråga så skickar jag koden. man kommer även behöva säga mitt namn eftrsom det var jag som utväckla den från inget.
+Det finns en bugg där vissa linjer, de man ska "inserta" ett numer, att om man inte skriver ett numer så stängs hela programmet ned och man måste börja om.
+tidigare uträkningar sparas ändå.
 
 ## License
 
@@ -115,4 +142,5 @@ github: <https://github.com/lullebulle1>
 
 Jag skulle vilja tacka mig själv och Shazode för att han påpekade några saker som gjorde att koden blev bättre.
 Jag skulle även vilja ta chansen att tacka googel för den iden att importa math till pi, e och sqrt.
-Shazode:
+Shazode: 
+
